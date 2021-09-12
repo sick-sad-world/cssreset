@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Example</title>
+  <link rel="stylesheet" href="/rest.css" />
+  <style>
+    .section {
+      margin: 2rem 3rem;
+      width: 60vw;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .section>.section-title {
+      display: block;
+      flex: 0 0 100%;
+      font-size: 1.75rem;
+      line-height: 1;
+      border-bottom: 3px solid rgba(0, 0, 0, 0.25);
+      padding-bottom: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .section>.section-subgroup {
+      display: block;
+      margin: 1rem 0;
+      flex: 0 0 100%;
+    }
+
+    .section .vert-spacing {
+      display: block;
+      margin: 1rem 0;
+    }
+    
+    .section .layout-highlight {
+      outline: 1px solid blue;
+    }
+    
+    .section .layout-highlight:after {
+      content: 'layout item';
+      color: blue;
+    }
+
+    .section>.section-subgroup.half-size {
+      flex-basis: 50%;
+    }
+  </style>
+  <script>
+    const noop = (e) => e.preventDefault();
+    document.querySelectorAll('a, button').forEach(($el) => {
+      $el.addEventListener('click', noop);
+    });
+  </script>
+</head>
+
+<body>
+  <div class="section">
+    <span class="section-title">Headings: h1/h6</span>
+    <h1>
+      Lorem ipsum, dolor sit amet consectetur <a href="adadad">adipisicing elit.</a> Laboriosam at aut natus amet
+      minima mollitia. <small>Title addendum &lt;small&gt;</small>
+    </h1>
+    <h2>
+      Lorem ipsum, dolor sit amet consectetur <a href="dadad">adipisicing elit.</a> Laboriosam at aut natus amet
+      minima mollitia. <small>Title addendum &lt;small&gt;</small>
+    </h2>
+    <h3>
+      Lorem ipsum, dolor sit amet consectetur <a href="adadad">adipisicing elit.</a> Laboriosam at aut natus amet
+      minima mollitia. <small>Title addendum &lt;small&gt;</small>
+    </h3>
+    <h4>
+      Lorem ipsum, dolor sit amet consectetur <a href="adadad">adipisicing elit.</a> Laboriosam at aut natus amet
+      minima mollitia. <small>Title addendum &lt;small&gt;</small>
+    </h4>
+    <h5>
+      Lorem ipsum, dolor sit amet consectetur <a href="adadad">adipisicing elit.</a> Laboriosam at aut natus amet
+      minima mollitia. <small>Title addendum &lt;small&gt;</small>
+    </h5>
+    <h6>
+      Lorem ipsum, dolor sit amet consectetur <a href="adadad">adipisicing elit.</a> Laboriosam at aut natus amet
+      minima mollitia. <small>Title addendum &lt;small&gt;</small>
+    </h6>
+  </div>
+  <div class="section">
+    <span class="section-title">Text formatting and inline semantics:</span>
+    <p>
+      Paragraph: <b>[b] Lorem ipsum dolor sit amet consectetur</b>, adipisicing elit. Sapiente sequi eaque suscipit,
+      iusto voluptatibus in, <a href="">asperiores est tenetur voluptas</a> something <sup>[sup]</sup> accusantium
+      molestiae <var>[var] tag</var> libero perspiciatis good to work <time datetime="2001-05-15 9:00">[time]
+        9:00-18:00</time> voluptates quam enim voluptatem non ullam, soluta numquam et magnam aut assumenda
+      amet cum. Ut, corrupti suscipit! <samp>[samp] document.querySelectorAll('a, button')</samp>
+    </p>
+    <p>
+      Paragraph: <strong>[strong] Lorem ipsum dolor sit amet consectetur</strong>, adipisicing elit. Voluptates ipsum
+      omnis, <cite>[cite] bla bla bla this is somewhat smart citate</cite> minima quia id corrupti delectus tenetur
+      culpa something <sub>[sub]</sub> temporibus voluptatibus reiciendis similique, rerum ad molestias adipisci
+      perferendis voluptatem amet? Libero. <code>[code] document.querySelectorAll('a, button')</code>
+    </p>
+    <p>
+      Paragraph: <i>[i] Lorem ipsum dolor, sit amet consectetur</i> adipisicing elit. Eos facere amet ea velit
+      voluptatibus tempore ab vero, <abbr title="This is abbreviation">[abbr] pariatur ex autem</abbr> quam similique,
+      placeat <dfn>[dfn] natus fugiat vel</dfn> veniam, sequi odit et? <small>[small] Accusantium quos, ipsum
+        provident</small> soluta
+      voluptas cumque iure. Consequatur quia perferendis cumque doloremque molestiae eum!
+      <svg role="icon" width="16" height="16" viewBox="0 0 20 20">
+        <path d="M19.025,3.587c-4.356,2.556-4.044,7.806-7.096,10.175c-2.297,1.783-5.538,0.88-7.412,0.113c0,0-1.27,1.603-2.181,3.74
+          c-0.305,0.717-1.644-0.073-1.409-0.68C3.905,9.25,14.037,5.416,14.037,5.416S6.888,5.113,2.11,11.356
+          C1.982,9.93,1.77,6.072,5.47,3.706C10.486,0.495,20.042,2.991,19.025,3.587z" />
+      </svg>
+    </p>
+    <p>
+      Paragraph: <em>[em] Lorem, ipsum dolor sit amet consectetur</em> adipisicing elit. Perferendis, ratione optio
+      facilis, laboriosam <a href="mailto://blabla@gmail.com">mailto link blabla@gmail.com</a> quia aliquid ipsum vitae
+      error.
+      Officia architecto nesciunt eum atque! <kbd>[kbd] Ctrl+C Ctrl + V</kbd> Magni deserunt, strike atque omnis
+      aspernatur <del>[del] this text is no longer valid, it was deleted</del>
+      <ins>[ins] this is replacement for deleted text</ins> consectetur quae rem ut laudantium, commodi veniam quas
+      libero ipsum eius! Call me <a href="tel://1234567890">+1234567890</a>
+    <address>Dynamovskaya st., Kharkiv, Kharkiv region, 61000</address>
+    </p>
+  </div>
+  <div class="section">
+    <span class="section-title">Lists:</span>
+    <div class="section-subgroup half-size">
+      <dl>
+        <dt>Content categories</dt>
+        <dd>Flow content, phrasing content, palpable content.</dd>
+        <dt>Permitted content</dt>
+        <dd>Phrasing content.</dd>
+        <dt>Tag omission</dt>
+        <dd>None, both the starting and ending tag are mandatory.</dd>
+        <dt>Permitted parents</dt>
+        <dd>Any element that accepts phrasing content.</dd>
+        <dt>Implicit ARIA role</dt>
+        <dd>No corresponding role</dd>
+        <dt>Permitted ARIA roles</dt>
+        <dd>Any</dd>
+        <dt>DOM interface</dt>
+        <dd>HTMLElement</dd>
+      </dl>
+    </div>
+    <div class="section-subgroup half-size">
+      <ul>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, minima?</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui et tenetur quasi!</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam eligendi doloremque quo architecto atque, aut
+          tenetur?</li>
+        <li>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem libero ipsam at corporis repellat odit.
+          <ul>
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto, officia.</li>
+            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim consequatur ab vitae?</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum eius nisi explicabo.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="section-subgroup half-size">
+      <ol>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo similique laborum deleniti.</li>
+        <li>Lorem ipsum dolor sit amet consectetur.</li>
+        <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, consequuntur?</li>
+        <li>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae id nihil laboriosam corporis.
+          <ol>
+            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, necessitatibus.</li>
+            <li>Lorem ipsum dolor sit amet consectetur.</li>
+            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere fugiat voluptatum rerum.</li>
+          </ol>
+        </li>
+      </ol>
+    </div>
+    <div class="section-subgroup half-size">
+      <ul>
+        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa totam modi quis facilis maiores?</li>
+        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
+        <li>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam recusandae quia, quaerat asperiores
+          voluptatum dolor esse.
+          <ol>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto molestiae sunt dolor.</li>
+            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores, eos?</li>
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et architecto odit fugiat ipsum modi!</li>
+          </ol>
+        </li>
+      </ul>
+    </div>
+    <div class="section-subgroup half-size">
+      <ol>
+        <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus est delectus molestiae inventore ipsa totam
+          doloremque quibusdam consectetur!</li>
+        <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt architecto culpa ut magnam at, possimus
+          earum.</li>
+        <li>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          <ul>
+            <li>Lorem ipsum dolor sit amet consectetur.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, nam?</li>
+            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita qui magni cumque.</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </div>
+  <div class="section">
+    <span class="section-title">Bigger grouping:</span>
+    <div class="section-subgroup">
+      <details>
+        <summary>Details short dolor sit amet consectetur adipisicing elit. Enim sequi repudiandae nisi.</summary>
+        <div>
+          Paragraph: <strong>[strong] Lorem ipsum dolor sit amet consectetur</strong>, adipisicing elit. Voluptates
+          ipsum
+          omnis, <cite>[cite] bla bla bla this is somewhat smart citate</cite> minima quia id corrupti delectus tenetur
+          culpa something <sub>[sub]</sub> temporibus voluptatibus reiciendis similique, rerum ad molestias adipisci
+          perferendis voluptatem amet? Libero. <code>[code] document.querySelectorAll('a, button')</code>
+        </div>
+      </details>
+    </div>
+    <div class="section-subgroup">
+      <details>
+        <summary>Long details Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quam possimus,
+          asperiores molestias velit atque sequi doloremque vel. Qui ratione consectetur, totam consequatur sunt
+          officia.</summary>
+        <p>
+          Paragraph: <i>[i] Lorem ipsum dolor, sit amet consectetur</i> adipisicing elit. Eos facere amet ea velit
+          voluptatibus tempore ab vero, <abbr title="This is abbreviation">[abbr] pariatur ex autem</abbr> quam
+          similique,
+          placeat <dfn>[dfn] natus fugiat vel</dfn> veniam, sequi odit et? <small>[small] Accusantium quos, ipsum
+            provident</small> soluta
+          voluptas cumque iure. Consequatur quia perferendis cumque doloremque molestiae eum!
+        </p>
+      </details>
+    </div>
+    <div class="section-subgroup">
+      <blockquote>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus, eveniet! Explicabo ut at ipsam
+        necessitatibus dolores eveniet excepturi dicta
+        maiores consequuntur fugit neque, eum vitae accusamus est aut, sit debitis nam doloremque quod iste minima eos,
+        beatae temporibus adipisci. Fugit qui omnis tempora quaerat atque eius quidem autem adipisci quae.
+        <footer>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore ipsa veritatis magni? <cite>Lorem, ipsum
+            dolor.</cite>
+        </footer>
+      </blockquote>
+    </div>
+    <div class="section-subgroup">
+      <pre>
+import { SORT_DIR_DESC, SORT_DIR_ASC } from '../const';
+import invalid from './invalid';
+import get from './get';
+
+const DIR_INDEX = {
+  [SORT_DIR_DESC]: -1,
+  [SORT_DIR_ASC]: 1
+};
+
+/**
+ * Generalized wrapper running `Array.sort` against data given and sorts by specific `Number\|String` property.
+ * @param {Object[]} data Data to sort
+ * @param {String} sortBy Property to sort by
+ * @param {*} sortDirection Direction of sorting
+ */
+export default function collectionSort(data, sortBy, sortDirection) {
+  return data.sort((a, b) => {
+    const dir = DIR_INDEX[sortDirection];
+    invalid(
+      dir !== undefined,
+      `Direction is required for sorting, should be: ${SORT_DIR_DESC} or ${SORT_DIR_ASC}, but ${sortDirection} was given.`
+    );
+    let parA = get(a, sortBy);
+    let parB = get(b, sortBy);
+    if (typeof parA === 'string') {
+      parA = parA.toUpperCase();
+    }
+    if (typeof parB === 'string') {
+      parB = parB.toUpperCase();
+    }
+    if (parA < parB) {
+      return -1 * dir;
+    }
+    if (parA > parB) {
+      return 1 * dir;
+    }
+    return 0;
+  });
+}
+
+        </pre>
+    </div>
+    <div class="section-subgroup half-size">
+      <figure>
+        <figcaption><cite>Edsger Dijkstra:</cite></figcaption>
+        <blockquote>If debugging is the process of removing software bugs,
+          then programming must be the process of putting them in.</blockquote>
+      </figure>
+    </div>
+    <div class="section-subgroup half-size">
+      <figure>
+        <pre>
+function NavigatorExample() {
+  var txt;
+  txt = "Browser CodeName: " + navigator.appCodeName + "; ";
+  txt+= "Browser Name: " + navigator.appName + "; ";
+  txt+= "Browser Version: " + navigator.appVersion  + "; ";
+  txt+= "Cookies Enabled: " + navigator.cookieEnabled  + "; ";
+  txt+= "Platform: " + navigator.platform  + "; ";
+  txt+= "User-agent header: " + navigator.userAgent  + "; ";
+  console.log("NavigatorExample", txt);
+}
+        </pre>
+        <figcaption>Figure preformatted example</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="section">
+    <span class="section-title">Media and embeeded:</span>
+    <div class="section-subgroup half-size">
+      <div>Old regular image</div>
+      <img loading="lazy" src='https://picsum.photos/420/240' alt='image one' />
+    </div>
+    <div class="section-subgroup half-size">
+      <div>Image not found</div>
+      <img loading="lazy" src='https://picsum.phasdfasf' alt='404 image' />
+    </div>
+    <div class="section-subgroup half-size">
+      <div>Link that wraps an image</div>
+      <a href="https://picsum.photos/420/240" title='Link that wraps an image'>
+        <img loading="lazy" src='https://picsum.photos/420/240' alt='image link' />
+      </a>
+    </div>
+    <div class="section-subgroup half-size">
+      <div>Picture tag example with [source]</div>
+      <picture>
+        <source srcset="https://picsum.photos/400/240" media="(min-width: 1200px)">
+        <source srcset="https://picsum.photos/300/240" media="(min-width: 600px)">
+        <img loading="lazy" src="https://picsum.photos/240/240" alt="picture">
+      </picture>
+    </div>
+    <div class="section-subgroup half-size">
+      <figure>
+        <img loading="lazy" src='https://picsum.photos/420/240' alt='image one' />
+        <figcaption>Figure image example</figcaption>
+      </figure>
+    </div>
+    <div class="section-subgroup half-size">
+      <figure>
+        <svg width="420" height="240" version="1.1" viewBox="0 0 630 512" xml:space="preserve"
+          xmlns="http://www.w3.org/2000/svg">
+          <style type="text/css">
+            .plane {
+              stroke: #475565;
+              stroke-width: 4px;
+              stroke-linejoin: round;
+            }
+
+            .lines {
+              fill: #f2a68d;
+            }
+          </style>
+          <path class="plane" d="m435.97 365.5-400.96-118.05 424.37 9.3424z" style="fill:#939da8" />
+          <path class="plane" d="m35.018 247.45 405.58-46.218-20.776 106.08z" style="fill:#6d7986" />
+          <path class="plane" d="m610.82 358.67-575.8-111.22 497.15-0.27928z" style="fill:#b3e0f4" />
+          <path class="plane" d="m372.87 137.26-337.86 110.19 460.02-53.368z" style="fill:#b3e0f4" />
+          <path class="lines"
+            d="m595.48 84.444h-181.77c-7.2389 0-13.109-3.588-13.109-8.017 0-4.428 5.8686-8.017 13.109-8.017h181.77c7.2389 0 13.109 3.588 13.109 8.017-2e-3 4.428-5.8686 8.017-13.109 8.017z"
+            style="stroke-width:1.2787" />
+          <path class="lines"
+            d="m217.77 443.59h-165.08c-6.5742 0-11.905-3.588-11.905-8.017s5.3297-8.017 11.905-8.017h165.08c6.5742 0 11.905 3.588 11.905 8.017s-5.3297 8.017-11.905 8.017z"
+            style="stroke-width:1.2186" />
+          <path class="lines"
+            d="m424.69 50.239h-209.75c-5.7154 0-10.35-3.588-10.35-8.017s4.6335-8.017 10.35-8.017h209.75c5.7154 0 10.35 3.588 10.35 8.017s-4.6335 8.017-10.35 8.017z"
+            style="stroke-width:1.1362" />
+          <path class="lines"
+            d="m385.72 477.8h-208.68c-5.686 0-10.297-3.588-10.297-8.017s4.6097-8.017 10.297-8.017h208.68c5.686 0 10.297 3.588 10.297 8.017s-4.6097 8.017-10.298 8.017z" />
+        </svg>
+        <figcaption>Embeded svg example</figcaption>
+      </figure>
+    </div>
+    <div class="section-subgroup half-size">
+      <figure>
+        <object data="http://www.africau.edu/images/default/sample.pdf" type="application/pdf" width="420"
+          height="240"></object>
+        <figcaption>External entity as object</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="section">
+    <span class="section-title">Tables:</span>
+    <table>
+      <caption>Big table example with all possible tags</caption>
+      <colgroup>
+        <col />
+        <col />
+        <col span="2" />
+        <col span="3" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th>index</th>
+          <th>name</th>
+          <th>phone</th>
+          <th>email</th>
+          <th>country</th>
+          <th>address</th>
+          <th>zipcode</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Celeste B. Munoz</td>
+          <td>1-179-272-3256</td>
+          <td>ut.pellentesque@bibendum.co.uk</td>
+          <td>Tajikistan</td>
+          <td>P.O. Box 612, 2394 Maecenas St.</td>
+          <td>P3A 0B1</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Patrick B. Burks</td>
+          <td>719-1729</td>
+          <td>Maecenas.malesuada.fringilla@mi.ca</td>
+          <td>South Africa</td>
+          <td>Ap #210-2591 Lectus Street</td>
+          <td>44702</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Tana G. Daugherty</td>
+          <td>1-651-206-4200</td>
+          <td>amet.ornare@aenimSuspendisse.net</td>
+          <td>Latvia</td>
+          <td>624-9834 Nunc. Avenue</td>
+          <td>16372</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Brendan Q. Stanley</td>
+          <td>463-3897</td>
+          <td>venenatis.vel@quam.ca</td>
+          <td>Algeria</td>
+          <td>P.O. Box 385, 2310 Porttitor Street</td>
+          <td>227217</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Stuart W. Haley</td>
+          <td>143-0650</td>
+          <td>consectetuer@diamvel.org</td>
+          <td>Turks and Caicos Islands</td>
+          <td>Ap #639-5892 Mus. Rd.</td>
+          <td>14020</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Cody O. Mccarty</td>
+          <td>508-0261</td>
+          <td>dui@commodohendrerit.net</td>
+          <td>Bosnia and Herzegovina</td>
+          <td>Ap #803-3836 Praesent Av.</td>
+          <td>9423</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Lee L. Malone</td>
+          <td>138-2912</td>
+          <td>porta@felisadipiscing.ca</td>
+          <td>Hungary</td>
+          <td>859-4207 Mauris Rd.</td>
+          <td>80880-593</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Drew I. Mckinney</td>
+          <td>623-4299</td>
+          <td>Aliquam.gravida@auctorveliteget.net</td>
+          <td>Belize</td>
+          <td>P.O. Box 688, 5101 Lorem Ave</td>
+          <td>113431</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>Guinevere G. Wilkins</td>
+          <td>1-253-667-1151</td>
+          <td>orci@tempor.ca</td>
+          <td>Bahamas</td>
+          <td>P.O. Box 599, 5447 Arcu St.</td>
+          <td>0486 SM</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>Blythe M. Molina</td>
+          <td>587-1311</td>
+          <td>enim@interdumNunc.edu</td>
+          <td>Pakistan</td>
+          <td>P.O. Box 288, 4892 Ridiculus Road</td>
+          <td>39345</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>Sacha U. Hess</td>
+          <td>593-3956</td>
+          <td>vel.convallis.in@cursus.net</td>
+          <td>Antigua and Barbuda</td>
+          <td>230-9788 Mollis. Rd.</td>
+          <td>39951</td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>Lawrence S. Callahan</td>
+          <td>584-3063</td>
+          <td>mattis.Integer@vulputate.co.uk</td>
+          <td>Armenia</td>
+          <td>823-7622 Magna. Av.</td>
+          <td>444013</td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td>Maite D. Lindsey</td>
+          <td>1-691-246-7281</td>
+          <td>dapibus.ligula@orci.co.uk</td>
+          <td>Bahrain</td>
+          <td>P.O. Box 887, 6861 Nec Rd.</td>
+          <td>4632</td>
+        </tr>
+        <tr>
+          <td>14</td>
+          <td>Blake C. Mendoza</td>
+          <td>331-6775</td>
+          <td>est.mauris@risusNunc.net</td>
+          <td>Saint Kitts and Nevis</td>
+          <td>Ap #244-9958 Vitae, Ave</td>
+          <td>38192-414</td>
+        </tr>
+        <tr>
+          <td>15</td>
+          <td>Amos Y. English</td>
+          <td>1-768-995-0689</td>
+          <td>mi.lorem.vehicula@SednequeSed.edu</td>
+          <td>Norfolk Island</td>
+          <td>325-1997 Sociosqu Av.</td>
+          <td>66411</td>
+        </tr>
+        <tr>
+          <td>16</td>
+          <td>Quemby G. Mathis</td>
+          <td>438-6919</td>
+          <td>interdum@maurissitamet.edu</td>
+          <td>Nigeria</td>
+          <td>859-2329 Cras Rd.</td>
+          <td>2369</td>
+        </tr>
+        <tr>
+          <td>17</td>
+          <td>Alana N. Buchanan</td>
+          <td>1-465-373-8548</td>
+          <td>rutrum.eu@Nunc.ca</td>
+          <td>Mali</td>
+          <td>P.O. Box 712, 8505 Habitant Street</td>
+          <td>Z6260</td>
+        </tr>
+        <tr>
+          <td>18</td>
+          <td>Geoffrey I. Sims</td>
+          <td>516-8788</td>
+          <td>nascetur.ridiculus.mus@diamloremauctor.co.uk</td>
+          <td>Burundi</td>
+          <td>Ap #584-5077 Nisi St.</td>
+          <td>H9J 4K5</td>
+        </tr>
+        <tr>
+          <td>19</td>
+          <td>Imogene N. Mitchell</td>
+          <td>1-557-175-5054</td>
+          <td>semper@placerategetvenenatis.org</td>
+          <td>Togo</td>
+          <td>Ap #307-512 Litora Rd.</td>
+          <td>30500</td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td>Kylee F. Acevedo</td>
+          <td>1-890-877-8904</td>
+          <td>amet@acorciUt.edu</td>
+          <td>Anguilla</td>
+          <td>465-9339 Enim. Av.</td>
+          <td>638065</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>Total:</td>
+          <td>20</td>
+          <td>20</td>
+          <td>20</td>
+          <td>20</td>
+          <td>20</td>
+          <td>20</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <form class="section">
+    <span class="section-title">Form Elements:</span>
+    <div class="section-subgroup half-size">
+      <label>
+        Text input inside label
+        <input type="text" name="text" id="text" placeholder="Type something">
+      </label>
+    </div>
+    <div class="section-subgroup half-size">
+      <label for="text2">Label alongside input</label>
+      <input type="text" name="text2" id="text2" placeholder="Type something">
+    </div>
+    <div class="section-subgroup half-size">
+      <label>
+        Textarea inside label
+        <textarea name="textarea" id="textarea" rows="8"
+          placeholder="This is big textfield type here a lot, please"></textarea>
+      </label>
+    </div>
+    <div class="section-subgroup half-size">
+      <label id="textarea2">
+        Textarea alongside label
+      </label>
+      <textarea name="textarea" id="textarea2" placeholder="This is bigtextfield type here a lot, please"></textarea>
+    </div>
+    <div class="section-subgroup half-size">
+      <label>
+        Email input
+        <input type="email" name="email" id="email" placeholder="Type email" />
+      </label>
+    </div>
+    <div class="section-subgroup half-size">
+      <label>
+        Textinput with datalist
+        <input type="text" list="ice-cream-flavors" name="datalistchoise" id="datalistchoise"
+          placeholder="Type or select" />
+      </label>
+      <datalist id="ice-cream-flavors">
+        <option value="Chocolate">
+        <option value="Coconut">
+        <option value="Mint">
+        <option value="Strawberry">
+        <option value="Vanilla">
+      </datalist>
+    </div>
+    <div class="section-subgroup half-size">
+      <label>
+        password input
+        <input type="password" name="password" id="password" placeholder="Type password" />
+      </label>
+    </div>
+    <div class="section-subgroup half-size">
+      <label>
+        Url input
+        <input type="url" name="url" id="url" placeholder="Type url" />
+      </label>
+    </div>
+    <div class="section-subgroup half-size">
+      <label>
+        Number input
+        <input type="number" name="number" id="number" placeholder="Type number" />
+      </label>
+    </div>
+    <div class="section-subgroup half-size">
+      <label>
+        Tel input
+        <input type="tel" name="tel" id="tel" placeholder="Type tel" />
+      </label>
+    </div>
+    <div class="section-subgroup half-size">
+      <label>
+        Search input
+        <input type="search" name="search" id="search" placeholder="Search" />
+      </label>
+    </div>
+    <div class="section-subgroup half-size">
+      <label>
+        Datetime input
+        <input type="date" name="datetime" id="datetime" />
+      </label>
+    </div>
+    <div class="section-subgroup half-size">
+      <label>
+        Color input
+        <input type="color" name="color" id="color" />
+      </label>
+    </div>
+    <div class="section-subgroup half-size">
+      <label>
+        Image input
+        <input type="image" name="image" src="https://mdn.mozillademos.org/files/2917/fxlogo.png" width="48">
+      </label>
+    </div>
+    <div class="section-subgroup half-size">
+      <label>
+        File input
+        <input type="file" name="file" id="file" />
+      </label>
+    </div>
+    <div class="section-subgroup half-size">
+      <label>
+        Range input
+        <input type="range" id="cowbell" name="cowbell" min="0" max="100" value="90" step="1" />
+      </label>
+    </div>
+    <div class="section-subgroup half-size">
+      <input type="submit" value="input Submit" />
+      <input type="reset" value="input Reset" />
+      <input type="button" value="input Button" />
+      <button>Button</button>
+      <button type="submit">Submit Button</button>
+      <button type="reset">Reset Button</button>
+    </div>
+    <div class="section-subgroup half-size">
+      <label>
+        <input type="checkbox" name="checkbox" id="checkbox1" value="checkbox">
+        Checkbox input inside label
+      </label>
+    </div>
+    <div class="section-subgroup half-size">
+      <label>
+        <input type="radio" name="radio" id="radio1" value="radio">
+        Radio input inside label
+      </label>
+    </div>
+    <div class="section-subgroup half-size">
+      <input type="checkbox" name="checkbox2" id="checkbox2"><label for="checkbox2">Input alongside label</label>
+    </div>
+    <div class="section-subgroup half-size">
+      <input type="radio" name="radio" id="radio2"><label for="radio2">Input alongside label</label>
+    </div>
+    <div class="section-subgroup half-size">
+      <label>Meter Inside label:
+        <meter id="fuel2" min="0" max="100" low="33" high="66" optimum="80" value="80">at 50/100</meter>
+      </label>
+    </div>
+    <div class="section-subgroup half-size">
+      <label for="fuel">Meter Fuel level:</label>
+      <meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="50">at 50/100</meter>
+    </div>
+    <div class="section-subgroup half-size">
+      <label>Progress Inside label:
+        <progress id="file2" max="100" value="60">60%</progress>
+      </label>
+    </div>
+    <div class="section-subgroup half-size">
+      <label for="file">Progress Alongside label:</label>
+      <progress id="file" max="100" value="70">70%</progress>
+    </div>
+    <div class="section-subgroup half-size">
+      <label>Sort by:
+        <select name="select">
+          <option value="">Sort by</option>
+          <option value="found">Date found</option>
+          <option value="likes">Likes</option>
+          <option value="shares">Shares</option>
+          <option value="tweets">Tweets</option>
+          <option value="views_video">Views video</option>
+          <option value="votes_video">Votes video</option>
+          <option value="comments_video">Comments video</option>
+        </select>
+      </label>
+    </div>
+    <div class="section-subgroup half-size">
+      <label for="select2">Alongside label:</label>
+      <select name="select" id="select2">
+        <option value="">Sort by</option>
+        <optgroup label="Meta">
+          <option value="found">Date found</option>
+        </optgroup>
+        <optgroup label="Facebook">
+          <option value="likes">Likes</option>
+          <option value="shares">Shares</option>
+        </optgroup>
+        <optgroup label="Twitter">
+          <option value="tweets">Tweets</option>
+          <option value="shares" disabled title="Twitter Shares - Not yet implemented">Shares</option>
+          <option value="mentions">Mentions</option>
+        </optgroup>
+        <optgroup label="Youtube">
+          <option value="views_video">Views video</option>
+          <option value="votes_video">Votes video</option>
+          <option value="comments_video">Comments video</option>
+        </optgroup>
+      </select>
+    </div>
+    <div class="section-subgroup half-size">
+      <label>Sort by:
+        <select name="select" multiple>
+          <option value="">Sort by</option>
+          <option value="found">Date found</option>
+          <option value="likes">Likes</option>
+          <option value="shares">Shares</option>
+          <option value="tweets">Tweets</option>
+          <option value="views_video">Views video</option>
+          <option value="votes_video">Votes video</option>
+          <option value="comments_video">Comments video</option>
+        </select>
+      </label>
+    </div>
+    <div class="section-subgroup half-size">
+      <label for="select3">Alongside label:</label>
+      <select name="select" id="select3" multiple size="7">
+        <option value="">Sort by</option>
+        <optgroup label="Meta">
+          <option value="found">Date found</option>
+        </optgroup>
+        <optgroup label="Facebook">
+          <option value="likes">Likes</option>
+          <option value="shares">Shares</option>
+        </optgroup>
+        <optgroup label="Twitter">
+          <option value="tweets">Tweets</option>
+          <option value="shares" disabled title="Twitter Shares - Not yet implemented">Shares</option>
+          <option value="mentions">Mentions</option>
+        </optgroup>
+        <optgroup label="Youtube">
+          <option value="views_video">Views video</option>
+          <option value="votes_video">Votes video</option>
+          <option value="comments_video">Comments video</option>
+        </optgroup>
+      </select>
+    </div>
+    <div class="section-subgroup half-size">
+      <fieldset>
+        <legend>Fieldset example</legend>
+        <div class="vert-spacing">
+          <label>
+            Email input
+            <input type="email" name="email" id="email" placeholder="Type email" />
+          </label>
+        </div>
+        <div class="vert-spacing">
+          <label>
+            password input
+            <input type="password" name="password" id="password" placeholder="Type password" />
+          </label>
+        </div>
+        <div class="vert-spacing">
+          <label>
+            Your gender
+            <select name="gender" id="gender">
+              <option value="">Choose</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="trans">Trans</option>
+            </select>
+          </label>
+        </div>
+        <div class="vert-spacing">
+          <input type="checkbox" name="terms" id="terms"><label for="terms">I accept terms and conditions</label>
+        </div>
+        <div class="vert-spacing">
+          <button type="submit">Submit Button</button>
+          <button type="reset">Reset Button</button>
+        </div>
+      </fieldset>
+    </div>
+  </form>
+  <div class="section">
+    <span class="section-title">Semantics layout and sectioning:</span>
+    <section class="grid">
+      <article class="cell layout-highlight"></article>
+      <article class="cell layout-highlight"></article>
+      <article class="cell layout-highlight"></article>
+      <article class="cell layout-highlight"></article>
+      <article class="cell layout-highlight"></article>
+      <article class="cell layout-highlight"></article>
+      <article class="cell layout-highlight"></article>
+      <article class="cell layout-highlight"></article>
+      <article class="cell layout-highlight"></article>
+      <article class="cell layout-highlight"></article>
+      <article class="cell layout-highlight"></article>
+      <article class="cell layout-highlight"></article>
+      <article class="cell layout-highlight"></article>
+      <article class="cell layout-highlight"></article>
+      <article class="cell layout-highlight"></article>
+      <article class="cell layout-highlight"></article>
+    </section>
+  </div>
+
+</body>
+
+</html>
