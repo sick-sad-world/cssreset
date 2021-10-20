@@ -6,11 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Page Example</title>
-  <link rel="stylesheet" href="/rest.css" />
+  <link rel="stylesheet" href="/reset.css" />
   <style>
+    body {
+      background-image: linear-gradient(to bottom, rgba( 32,160,255,.35 ) 1px, transparent 1px);
+      background-size: 100% 24px;
+    }
     .section {
-      margin: 2rem 3rem;
-      width: 60vw;
+      margin: 1.5rem 3rem;
+      width: 70vw;
       display: flex;
       flex-wrap: wrap;
     }
@@ -18,22 +22,22 @@
     .section>.section-title {
       display: block;
       flex: 0 0 100%;
-      font-size: 1.75rem;
-      line-height: 1;
+      font-size: 1.5rem;
+      line-height: 2;
       border-bottom: 3px solid rgba(0, 0, 0, 0.25);
-      padding-bottom: 0.5rem;
-      margin-bottom: 2rem;
+      margin-top: -3px;
+      margin-bottom: var(--base-lh);
     }
 
     .section>.section-subgroup {
       display: block;
-      margin: 1rem 0;
+      margin: var(--base-lh) 0;
       flex: 0 0 100%;
     }
 
     .section .vert-spacing {
       display: block;
-      margin: 1rem 0;
+      margin: var(--base-lh) 0;
     }
     
     .section .layout-highlight {
@@ -48,6 +52,9 @@
     .section>.section-subgroup.half-size {
       flex-basis: 50%;
     }
+    .section>.section-subgroup.half-size:nth-child(2n + 1) {
+      padding-left: 2rem;
+    }
   </style>
   <script>
     const noop = (e) => e.preventDefault();
@@ -61,29 +68,36 @@
   <div class="section">
     <span class="section-title">Headings: h1/h6</span>
     <h1>
-      Lorem ipsum, dolor sit amet consectetur <a href="adadad">adipisicing elit.</a> Laboriosam at aut natus amet
+      [h1] Lorem ipsum, dolor sit amet consectetur <a href="adadad">adipisicing elit.</a> Laboriosam at aut natus amet
       minima mollitia. <small>Title addendum &lt;small&gt;</small>
     </h1>
     <h2>
-      Lorem ipsum, dolor sit amet consectetur <a href="dadad">adipisicing elit.</a> Laboriosam at aut natus amet
+      [h2] Lorem ipsum, dolor sit amet consectetur <a href="dadad">adipisicing elit.</a> Laboriosam at aut natus amet
       minima mollitia. <small>Title addendum &lt;small&gt;</small>
     </h2>
     <h3>
-      Lorem ipsum, dolor sit amet consectetur <a href="adadad">adipisicing elit.</a> Laboriosam at aut natus amet
+      [h3] Lorem ipsum, dolor sit amet consectetur <a href="adadad">adipisicing elit.</a> Laboriosam at aut natus amet
       minima mollitia. <small>Title addendum &lt;small&gt;</small>
     </h3>
     <h4>
-      Lorem ipsum, dolor sit amet consectetur <a href="adadad">adipisicing elit.</a> Laboriosam at aut natus amet
+      [h4] Lorem ipsum, dolor sit amet consectetur <a href="adadad">adipisicing elit.</a> Laboriosam at aut natus amet
       minima mollitia. <small>Title addendum &lt;small&gt;</small>
     </h4>
     <h5>
-      Lorem ipsum, dolor sit amet consectetur <a href="adadad">adipisicing elit.</a> Laboriosam at aut natus amet
+      [h5] Lorem ipsum, dolor sit amet consectetur <a href="adadad">adipisicing elit.</a> Laboriosam at aut natus amet
       minima mollitia. <small>Title addendum &lt;small&gt;</small>
     </h5>
     <h6>
-      Lorem ipsum, dolor sit amet consectetur <a href="adadad">adipisicing elit.</a> Laboriosam at aut natus amet
+      [h6] Lorem ipsum, dolor sit amet consectetur <a href="adadad">adipisicing elit.</a> Laboriosam at aut natus amet
       minima mollitia. <small>Title addendum &lt;small&gt;</small>
     </h6>
+  </div>
+  <div class="section">
+    <div style="box-shadow: var(--shadow-1); background-color: var(--color-surface); width: 10rem; height: 3rem; padding: 1rem; display:inline-block;margin-right: 3rem;">Depth 1</div>
+    <div style="box-shadow: var(--shadow-2); background-color: var(--color-surface); width: 10rem; height: 3rem; padding: 1rem; display:inline-block;margin-right: 3rem;">Depth 2</div>
+    <div style="box-shadow: var(--shadow-3); background-color: var(--color-surface); width: 10rem; height: 3rem; padding: 1rem; display:inline-block;margin-right: 3rem;">Depth 3</div>
+    <div style="box-shadow: var(--shadow-4); background-color: var(--color-surface); width: 10rem; height: 3rem; padding: 1rem; display:inline-block;margin-right: 3rem;">Depth 4</div>
+    <div style="box-shadow: var(--shadow-5); background-color: var(--color-surface); width: 10rem; height: 3rem; padding: 1rem; display:inline-block;margin-right: 3rem;">Depth 5</div>
   </div>
   <div class="section">
     <span class="section-title">Text formatting and inline semantics:</span>
@@ -220,6 +234,7 @@
           culpa something <sub>[sub]</sub> temporibus voluptatibus reiciendis similique, rerum ad molestias adipisci
           perferendis voluptatem amet? Libero. <code>[code] document.querySelectorAll('a, button')</code>
         </div>
+        <br/>
       </details>
     </div>
     <div class="section-subgroup">
@@ -235,6 +250,7 @@
             provident</small> soluta
           voluptas cumque iure. Consequatur quia perferendis cumque doloremque molestiae eum!
         </p>
+        <br/>
       </details>
     </div>
     <div class="section-subgroup">
@@ -244,8 +260,7 @@
         maiores consequuntur fugit neque, eum vitae accusamus est aut, sit debitis nam doloremque quod iste minima eos,
         beatae temporibus adipisci. Fugit qui omnis tempora quaerat atque eius quidem autem adipisci quae.
         <footer>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore ipsa veritatis magni? <cite>Lorem, ipsum
-            dolor.</cite>
+          John Bradley, Graduate (<a href="css-tricks.com">css-tricks.com</a>) <time datetime="2020-03-11">11 March, 2020</time>
         </footer>
       </blockquote>
     </div>
@@ -318,7 +333,7 @@ function NavigatorExample() {
       </figure>
     </div>
   </div>
-  <div class="section">
+  <!-- <div class="section">
     <span class="section-title">Media and embeeded:</span>
     <div class="section-subgroup half-size">
       <div>Old regular image</div>
@@ -389,17 +404,11 @@ function NavigatorExample() {
         <figcaption>External entity as object</figcaption>
       </figure>
     </div>
-  </div>
+  </div> -->
   <div class="section">
     <span class="section-title">Tables:</span>
     <table>
       <caption>Big table example with all possible tags</caption>
-      <colgroup>
-        <col />
-        <col />
-        <col span="2" />
-        <col span="3" />
-      </colgroup>
       <thead>
         <tr>
           <th>index</th>
@@ -654,7 +663,7 @@ function NavigatorExample() {
     <div class="section-subgroup half-size">
       <label>
         password input
-        <input type="password" name="password" id="password" placeholder="Type password" />
+        <input type="password" name="password" id="password2" placeholder="Type password" />
       </label>
     </div>
     <div class="section-subgroup half-size">
@@ -712,14 +721,6 @@ function NavigatorExample() {
       </label>
     </div>
     <div class="section-subgroup half-size">
-      <input type="submit" value="input Submit" />
-      <input type="reset" value="input Reset" />
-      <input type="button" value="input Button" />
-      <button>Button</button>
-      <button type="submit">Submit Button</button>
-      <button type="reset">Reset Button</button>
-    </div>
-    <div class="section-subgroup half-size">
       <label>
         <input type="checkbox" name="checkbox" id="checkbox1" value="checkbox">
         Checkbox input inside label
@@ -736,24 +737,6 @@ function NavigatorExample() {
     </div>
     <div class="section-subgroup half-size">
       <input type="radio" name="radio" id="radio2"><label for="radio2">Input alongside label</label>
-    </div>
-    <div class="section-subgroup half-size">
-      <label>Meter Inside label:
-        <meter id="fuel2" min="0" max="100" low="33" high="66" optimum="80" value="80">at 50/100</meter>
-      </label>
-    </div>
-    <div class="section-subgroup half-size">
-      <label for="fuel">Meter Fuel level:</label>
-      <meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="50">at 50/100</meter>
-    </div>
-    <div class="section-subgroup half-size">
-      <label>Progress Inside label:
-        <progress id="file2" max="100" value="60">60%</progress>
-      </label>
-    </div>
-    <div class="section-subgroup half-size">
-      <label for="file">Progress Alongside label:</label>
-      <progress id="file" max="100" value="70">70%</progress>
     </div>
     <div class="section-subgroup half-size">
       <label>Sort by:
@@ -830,12 +813,39 @@ function NavigatorExample() {
       </select>
     </div>
     <div class="section-subgroup half-size">
+      <input type="submit" value="Submit" />
+      <input type="reset" value="Reset" />
+      <input type="button" value="input Button" />
+      <button>Button</button>
+      <button type="submit">Submit Button</button>
+      <button type="reset">Reset Button</button>
+    </div>
+    <div class="section-subgroup half-size">
+      <label>Meter Inside label:
+        <meter id="fuel2" min="0" max="100" low="33" high="66" optimum="80" value="80">at 50/100</meter>
+      </label>
+    </div>
+    <div class="section-subgroup half-size">
+      <label for="fuel">Meter Fuel level:</label>
+      <meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="50">at 50/100</meter>
+    </div>
+    <div class="section-subgroup half-size">
+      <label>Progress Inside label:
+        <progress id="file2" max="100" value="60">60%</progress>
+      </label>
+    </div>
+    <div class="section-subgroup half-size">
+      <label for="file">Progress Alongside label:</label>
+      <progress id="file" max="100" value="70">70%</progress>
+    </div>
+    <div class="section-subgroup half-size"></div>
+    <div class="section-subgroup half-size">
       <fieldset>
         <legend>Fieldset example</legend>
         <div class="vert-spacing">
           <label>
             Email input
-            <input type="email" name="email" id="email" placeholder="Type email" />
+            <input type="email" name="email" id="email2" placeholder="Type email" />
           </label>
         </div>
         <div class="vert-spacing">
@@ -856,7 +866,10 @@ function NavigatorExample() {
           </label>
         </div>
         <div class="vert-spacing">
-          <input type="checkbox" name="terms" id="terms"><label for="terms">I accept terms and conditions</label>
+          <label>
+            <input type="checkbox" name="terms" id="terms">
+            I accept terms and conditions
+          </label>
         </div>
         <div class="vert-spacing">
           <button type="submit">Submit Button</button>
@@ -868,22 +881,22 @@ function NavigatorExample() {
   <div class="section">
     <span class="section-title">Semantics layout and sectioning:</span>
     <section class="grid">
-      <article class="cell layout-highlight"></article>
-      <article class="cell layout-highlight"></article>
-      <article class="cell layout-highlight"></article>
-      <article class="cell layout-highlight"></article>
-      <article class="cell layout-highlight"></article>
-      <article class="cell layout-highlight"></article>
-      <article class="cell layout-highlight"></article>
-      <article class="cell layout-highlight"></article>
-      <article class="cell layout-highlight"></article>
-      <article class="cell layout-highlight"></article>
-      <article class="cell layout-highlight"></article>
-      <article class="cell layout-highlight"></article>
-      <article class="cell layout-highlight"></article>
-      <article class="cell layout-highlight"></article>
-      <article class="cell layout-highlight"></article>
-      <article class="cell layout-highlight"></article>
+      <article class="grid-cell layout-highlight"></article>
+      <article class="grid-cell layout-highlight" data-span="2"></article>
+      <article class="grid-cell layout-highlight" data-span="3"></article>
+      <article class="grid-cell layout-highlight" data-span="2"></article>
+      <article class="grid-cell layout-highlight" data-span="5"></article>
+      <article class="grid-cell layout-highlight" data-span="3"></article>
+      <article class="grid-cell layout-highlight" data-span="8"></article>
+      <article class="grid-cell layout-highlight" data-span="4"></article>
+      <article class="grid-cell layout-highlight" data-span="4"></article>
+      <article class="grid-cell layout-highlight" data-span="7"></article>
+      <article class="grid-cell layout-highlight"></article>
+      <article class="grid-cell layout-highlight"></article>
+      <article class="grid-cell layout-highlight"></article>
+      <article class="grid-cell layout-highlight"></article>
+      <article class="grid-cell layout-highlight"></article>
+      <article class="grid-cell layout-highlight"></article>
     </section>
   </div>
 
