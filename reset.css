@@ -651,6 +651,7 @@ fieldset {
 
 fieldset {
   border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
   border-radius: var(--bdrs);
   padding: 0 1rem;
 }
