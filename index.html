@@ -334,7 +334,7 @@ function NavigatorExample() {
       </figure>
     </div>
   </div>
-  <!-- <div class="section">
+  <div class="section">
     <span class="section-title">Media and embeeded:</span>
     <div class="section-subgroup half-size">
       <div>Old regular image</div>
@@ -342,7 +342,7 @@ function NavigatorExample() {
     </div>
     <div class="section-subgroup half-size">
       <div>Image not found</div>
-      <img loading="lazy" src='https://picsum.phasdfasf' alt='404 image' />
+      <img loading="lazy" style="--aspect: 420/240" width="420" src='https://picsum.phasdfasf' alt='404 image' />
     </div>
     <div class="section-subgroup half-size">
       <div>Link that wraps an image</div>
@@ -359,8 +359,16 @@ function NavigatorExample() {
       </picture>
     </div>
     <div class="section-subgroup half-size">
+      <div>Picture tag example not found</div>
+      <picture>
+        <source srcset="https://picsumadad.photos/400/240" media="(min-width: 1200px)">
+        <source srcset="https://picsumadad.photos/300/240" media="(min-width: 600px)">
+        <img loading="lazy" style="--aspect: 420/240" width="420" src="https://picsumadad.photos/240/240" alt="picture">
+      </picture>
+    </div>
+    <div class="section-subgroup half-size">
       <figure>
-        <img loading="lazy" src='https://picsum.photos/420/240' alt='image one' />
+        <img loading="lazy" style="--aspect:420/240" src='https://picsum.photos/420/240' alt='image one' />
         <figcaption>Figure image example</figcaption>
       </figure>
     </div>
@@ -400,12 +408,11 @@ function NavigatorExample() {
     </div>
     <div class="section-subgroup half-size">
       <figure>
-        <object data="http://www.africau.edu/images/default/sample.pdf" type="application/pdf" width="420"
-          height="240"></object>
+        <object style="--aspect: 420/240;" data="http://www.africau.edu/images/default/sample.pdf" type="application/pdf"></object>
         <figcaption>External entity as object</figcaption>
       </figure>
     </div>
-  </div> -->
+  </div>
   <div class="section">
     <span class="section-title">Tables:</span>
     <table>
