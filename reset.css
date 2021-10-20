@@ -69,11 +69,13 @@
 
 html {
   min-height: 100%;
+  min-width: 980px;
   font-size: 16px; /* Root font size for [rem] units */
   line-height: 1.5; /* 24px */
   -webkit-text-size-adjust: 100%;
   background-color: var(--color-background);
   color: var(--color-primary);
+  overflow: auto;
 }
 
 body {
@@ -241,6 +243,7 @@ pre {
   border-left: 3px solid var(--color-accent);
   padding: calc(var(--base-lh) * 0.5) 1rem calc(var(--base-lh) * 0.5) calc(1rem - 3px);
   border-radius: var(--bdrs);
+  overflow: auto;
 }
 
 blockquote {
@@ -453,11 +456,16 @@ select {
 }
 
 select[multiple] {
-  height: calc(var(--base-lh) * 3 + 1rem);
+  height: calc(var(--base-lh) * 6 + 1.125rem);
+  background-image: none;
 }
 
 select[multiple][size] {
   height: auto;
+}
+
+option {
+  padding: 0.5rem;
 }
 
 /* Pointer input styling [radio|checkbox]
@@ -612,10 +620,12 @@ legend {
 }
 .flex-cell {
   flex: 0 0 var(--flex-basis, auto);
+  width: var(--flex-basis, auto);
 }
 
 .flex-cell-max {
   flex: 1 1 var(--flex-basis, auto);
+  width: var(--flex-basis, auto);
 }
 
 .flex-cell:not(:last-child) {
