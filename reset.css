@@ -515,7 +515,7 @@ select {
 }
 
 select[multiple] {
-  height: calc(var(--base-lh) * 6 + 1.125rem);
+  height: calc(var(--base-lh) * 6 + 1rem);
   background-image: none;
 }
 
@@ -698,35 +698,13 @@ legend {
 
 .grid {
   display: grid;
-  width: 100%;
-  grid-template-columns: repeat(8, 1fr);
   grid-auto-rows: auto;
-  grid-gap: var(--base-lh) 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(var(--grid-base, 20%), 1fr));
+  margin: 0 -1rem;
+  width: calc(100% + 2rem);
 }
 .grid-cell {
-  grid-column-start: var(--grid-start, auto);
   grid-column-end: span var(--grid-span, 1);
-  grid-row-start: var(--grid-row-start, auto);
-  grid-row-end: span var(--grid-row-span, 1);
-}
-.grid-cell[data-span='2'] {
-  --grid-span: 2;
-}
-.grid-cell[data-span='3'] {
-  --grid-span: 3;
-}
-.grid-cell[data-span='4'] {
-  --grid-span: 4;
-}
-.grid-cell[data-span='5'] {
-  --grid-span: 5;
-}
-.grid-cell[data-span='6'] {
-  --grid-span: 6;
-}
-.grid-cell[data-span='7'] {
-  --grid-span: 7;
-}
-.grid-cell[data-span='8'] {
-  --grid-span: 8;
+  grid-row-end: span var(--grid-row, 1);
+  padding: calc(var(--base-lh) * 0.5) 1rem;
 }
