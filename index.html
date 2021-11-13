@@ -740,6 +740,15 @@ function NavigatorExample() {
       <input type="radio" name="radio" id="radio2"><label for="radio2">Input alongside label</label>
     </div>
     <div class="section-subgroup half-size">
+      <label>
+        <button role='switch' value='some' id='some2' name='some' aria-checked="true"></button>
+        Toggle switch inside label
+      </label>
+    </div>
+    <div class="section-subgroup half-size">
+      <button role='switch' value='some' id='some' name='some'></button><label for="some">Toggle switch alongside label</label>
+    </div>
+    <div class="section-subgroup half-size">
       <label>Sort by:
         <select name="select">
           <option value="">Sort by</option>

@@ -10,6 +10,8 @@
 
   --bdrs: 4px;
 
+  --td: 250ms;
+
   --color-primary: hsla(219deg, 40%, 20%, 0.9);
   --color-secondary: hsla(219deg, 40%, 20%, 0.7);
 
@@ -41,6 +43,7 @@
 
   --svg-arrow: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="%23bfbfc0" d="M13.418,7.859c0.271-0.268,0.709-0.268,0.978,0c0.27,0.268,0.272,0.701,0,0.969l-3.908,3.83 c-0.27,0.268-0.707,0.268-0.979,0l-3.908-3.83c-0.27-0.267-0.27-0.701,0-0.969c0.271-0.268,0.709-0.268,0.978,0L10,11L13.418,7.859z"/></svg>');
   --svg-circle: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle fill="%23fb6a6a" r="12" cx="12" cy="12" /></svg>');
+  --svg-circle-grayscale: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle fill="%23dddfe3" r="12" cx="12" cy="12" /></svg>');
   --svg-checkmark: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23fb6a6a" d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>');
   --svg-image-fallback: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 48"><path fill="%23bfbfc0" d="M56,0H8A8,8,0,0,0,0,8V40a7.27,7.27,0,0,0,.48,2.64A8.05,8.05,0,0,0,4,46.91,8.1,8.1,0,0,0,8,48H56a8.08,8.08,0,0,0,6.72-3.65A8.18,8.18,0,0,0,64,40V8A8,8,0,0,0,56,0ZM33,42.67H8a2.35,2.35,0,0,1-.83-.16L21.65,22.75,33.52,34.61l3.76,3.76,4.27,4.3ZM58.67,40A2.68,2.68,0,0,1,56,42.67H49.12l-8-8.06,6.82-6.74,10.78,12Zm0-8.13L50,22.21a2.72,2.72,0,0,0-1.89-.88,2.53,2.53,0,0,0-1.95.78l-8.82,8.74L23.23,16.77A2.84,2.84,0,0,0,21.12,16a2.76,2.76,0,0,0-1.95,1.09L5.33,36V8A2.68,2.68,0,0,1,8,5.33H56A2.68,2.68,0,0,1,58.67,8Z"/><circle fill="%23bfbfc0" cx="37.33" cy="18.67" r="5.33"/></svg>');
   --svg-quote: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path opacity="0.5" fill="%23ff6666" d="M11 9.275c0 5.141-3.892 10.519-10 11.725l-.984-2.126c2.215-.835 4.163-3.742 4.38-5.746-2.491-.392-4.396-2.547-4.396-5.149 0-3.182 2.584-4.979 5.199-4.979 3.015 0 5.801 2.305 5.801 6.275zm13 0c0 5.141-3.892 10.519-10 11.725l-.984-2.126c2.215-.835 4.163-3.742 4.38-5.746-2.491-.392-4.396-2.547-4.396-5.149 0-3.182 2.584-4.979 5.199-4.979 3.015 0 5.801 2.305 5.801 6.275z"/></svg>');
@@ -539,7 +542,7 @@ input[type='checkbox'] {
   padding: 0;
   box-sizing: border-box;
   display: inline-block;
-  vertical-align: -0.3em;
+  vertical-align: -0.25em;
   width: var(--form-pointer);
   height: var(--form-pointer);
   border: 1px solid var(--color-border);
@@ -563,6 +566,37 @@ input[type='checkbox'] {
 }
 input[type='checkbox']:checked {
   background-image: var(--svg-checkmark);
+}
+
+/* Toggle switches
+   ================================================================== */
+
+button[role='switch'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  user-select: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: -0.25em;
+  border-radius: calc(var(--form-pointer) * 0.5);
+  width: calc(var(--form-pointer) * 2);
+  height: var(--form-pointer);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-element);
+  background-image: var(--svg-circle-grayscale);
+  background-size: 38%;
+  background-position: 4px center;
+  background-repeat: no-repeat;
+  transition: background-position var(--td);
+}
+
+button[role='switch'][aria-checked='true'] {
+  background-image: var(--svg-circle);
+  background-position: calc(100% - 4px) center;
 }
 
 /* Specific input types styling [image|file|color]
@@ -604,7 +638,7 @@ input[type='range'] {
 /* Button styling
    ================================================================== */
 
-button,
+button:not([role='switch']),
 input[type='button'],
 input[type='reset'],
 input[type='submit'] {
@@ -640,10 +674,6 @@ button:-moz-focusring,
 [type='reset']:-moz-focusring,
 [type='submit']:-moz-focusring {
   outline: 1px dotted ButtonText;
-}
-
-fieldset {
-  padding: 0.35em 0.75em 0.625em;
 }
 
 /* Fieldset styling
